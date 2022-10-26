@@ -1,0 +1,39 @@
+body {
+
+    height: 100vh;
+
+}
+.cards {
+
+    display: flex;
+    flex-flow: column wrap;
+    /* flex-wrap: wrap; */
+    padding: 10px;
+    /* display: grid;
+    grid-template-columns: auto auto auto;*/
+    /* justify-content: center;  */
+}
+.card {
+
+    color: white;
+    background-color: rgb(43, 125, 226);
+    border-color: black;
+    border-style: double;
+    margin: 10px;
+    ;
+    /* flex-direction:column; */
+    width: 250px;
+    /* justify-content: space-between; */
+    /* text-align: center; */
+    border-radius: 10px;
+ 
+ }
+
+ .card img {
+
+align-self: center;
+width: 100px;
+
+
+
+ }
