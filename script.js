@@ -21,26 +21,37 @@ async function fetchPokemon() {
     card.append(p)
     card.append(img)
     cards.append(card)
-    
-  
-
-   
+     
   } 
 
      // body.append(cards) 
  }
 
-//  function filter () {
+ function filter () {
 
-//  let input = document.getElementById("myInput");
-//   let f = input.value.toUpperCase();
-//   let p = cards.getElementsByTagName("p")[0]
-//   text = p.textContent || p.innerText
+  let input = document.getElementById("myInput");
+  let f = input.value.toUpperCase();
+  for (i = 0; i < cards.length; i++) {
+    let a = cards[i].getElementsByTagName("p");
+    let txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(f) > -1) {
+          cards[i].style.display = "";
+      } else {
+          cards[i].style.display = "none";
+      }
+  }
 
-//   for (let i = 0; i < cards.length; i++) {
+ }
 
-//   if (cards[i].)
-
+//  function filter (c) {
+//   let input = document.getElementById("myInput");
+//   //let f = input.value.toUpperCase();
+//   if (c == "all") c = "";
+//   for (i = 0; i < cards.length; i++) {
+//     let a = cards[i].getElementsByTagName("p")[0];
+//     let txtValue = a.textContent || a.innerText;
+//     removeClass(cards[i], "show");
+//     if (cards[i].className.indexOf(c)> -1) addClass(cards[i], "show");
 //   }
 
 //  }
@@ -48,18 +59,29 @@ async function fetchPokemon() {
 
 // function addClass (element, name) {
 
-//   element.classList.add(name)
-
-
-
-
-// // }
-
-// // function removeClass (element, name) {
-
-// //   element.classList.remove(name)
-
+//   var i, arr1, arr2;
+//   arr1 = element.className.split(" ");
+//   arr2 = name.split(" ");
+//   for (i = 0; i < arr2.length; i++) {
+//     if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+//   }
 
 // }
+
+// function removeClass (element, name) {
+
+//   var i, arr1, arr2;
+//   arr1 = element.className.split(" ");
+//   arr2 = name.split(" ");
+//   for (i = 0; i < arr2.length; i++) {
+//     while (arr1.indexOf(arr2[i]) > -1) {
+//       arr1.splice(arr1.indexOf(arr2[i]), 1);     
+//     }
+//   }
+//   element.className = arr1.join(" ");
+
+// }
+
+// filter("all")
 
 fetchPokemon();
