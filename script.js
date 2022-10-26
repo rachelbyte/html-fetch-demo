@@ -1,16 +1,12 @@
 //grab access to body element
-const body = document.querySelector("body");
-// const fetch = require("isomorphic-fetch")
+//const body = document.querySelector("body");
 
+let cards = document.querySelector(".cards")
 async function fetchPokemon() {
   //saving the api response in a constant
   const response = await fetch("https://pokeapi.co/api/v2/pokemon");
   const data = await response.json();
   let variable = data["results"]
- 
-  let cards = document.querySelector(".cards")
-
- 
 
   for (let i = 0; i < variable.length; i++) {
 
@@ -25,29 +21,45 @@ async function fetchPokemon() {
     card.append(p)
     card.append(img)
     cards.append(card)
-
-    let graph = card.getElementsByTagName("p")[0]
-
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    if (graph.innerText.toUpperCase().indexOf(filter) > -1) {
-
-    card.style.display = "block"
-
-    } else {
-
-      card.style.display = "none"
-
-    }
     
-    
+  
 
+   
+  } 
 
-  }
      // body.append(cards) 
  }
 
+//  function filter () {
+
+//  let input = document.getElementById("myInput");
+//   let f = input.value.toUpperCase();
+//   let p = cards.getElementsByTagName("p")[0]
+//   text = p.textContent || p.innerText
+
+//   for (let i = 0; i < cards.length; i++) {
+
+//   if (cards[i].)
+
+//   }
+
+//  }
 
 
+// function addClass (element, name) {
+
+//   element.classList.add(name)
+
+
+
+
+// // }
+
+// // function removeClass (element, name) {
+
+// //   element.classList.remove(name)
+
+
+// }
 
 fetchPokemon();

@@ -34,6 +34,10 @@ body {
 align-self: center;
 width: 100px;
 
+ }
 
+ .show {
+
+display: block;
 
  }
