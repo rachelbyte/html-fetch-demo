@@ -10,10 +10,10 @@ async function fetchPokemon() {
  
   let cards = document.querySelector(".cards")
 
-  input = document.getElementById('myInput');
-  filter = input.value.toUpperCase();
+ 
 
-  for (let i = 0; i <= variable.length; i++) {
+  for (let i = 0; i < variable.length; i++) {
+
     let card = document.createElement("div")
     card.classList.add("card")
     p = document.createElement("p");
@@ -26,13 +26,17 @@ async function fetchPokemon() {
     card.append(img)
     cards.append(card)
 
-    if (name.toUpperCase().indexOf(filter) > -1) {
+    let graph = card.getElementsByTagName("p")[0]
 
-    cards[i].style.display = "block"
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    if (graph.innerText.toUpperCase().indexOf(filter) > -1) {
+
+    card.style.display = "block"
 
     } else {
 
-      cards[i].style.display = "none"
+      card.style.display = "none"
 
     }
     
